@@ -18,7 +18,7 @@ public class SearchProductPage {
     @FindBy(id= "button-cart")
     private WebElement addToCart;
 
-    @FindBy(xpath = "//div[@class = 'caption']/following-sibling::div/child::button[1]")
+    @FindBy(xpath= "//*[@id=\"content\"]/div[3]/div/div/div[2]/div[2]/button[1]/span")
     private WebElement addToCartButton;
 
     @FindBy(linkText = "HP LP3065")

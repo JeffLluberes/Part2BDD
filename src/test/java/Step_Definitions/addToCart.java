@@ -33,11 +33,11 @@ public class addToCart {
     public void user_Adds_Product_To_Cart(){
         SearchProductPage searchProductPage = new SearchProductPage(driver);
         searchProductPage.clickOnAddToCart();
-    }
-    @And("User will confirm add to cart")
-    public void user_Will_Confirm_Add_to_Cart(){
-        SearchProductPage searchProductPage = new SearchProductPage(driver);
-        searchProductPage.addProductToCart();
+   // }
+   // @And("User will confirm add to cart")
+    //public void user_Will_Confirm_Add_to_Cart(){
+    //    SearchProductPage searchProductPage = new SearchProductPage(driver);
+     //   searchProductPage.addProductToCart();
 
     }
     @Then("User will navigate to AddToCart page and confirm Product added")
