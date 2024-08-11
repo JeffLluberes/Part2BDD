@@ -34,8 +34,11 @@ public class LoginPage {
     @FindBy(css = "input.btn.btn-primary")
     private WebElement continueButtonForgotEmail;
 
-    @FindBy (css = "#account-login > div.alert.alert-danger.alert-dismissible")
+    @FindBy(css = "#account-login > div.alert.alert-danger.alert-dismissible")
     private WebElement exceededLoginAttempts;
+
+    @FindBy(css = "#content > div > div:nth-child(2) > div > h2")
+    private WebElement returnCustomerdisplayed;
 
 
     public LoginPage(WebDriver driver) {
@@ -55,26 +58,35 @@ public class LoginPage {
         loginButton.click();
     }
 
-    public void forgotPassword(){
+    public void forgotPassword() {
         forgotPasswordLink.click();
     }
-    public void enterEmailToForgotPasswordFieldBox(String emailForgotText){
+
+    public void enterEmailToForgotPasswordFieldBox(String emailForgotText) {
         emailForForgotPassword.sendKeys(emailForgotText);
     }
-    public void continueButtonForgotEmailPage(){
+
+    public void continueButtonForgotEmailPage() {
         continueButtonForgotEmail.click();
     }
 
-    public boolean retrieveWarningEmailPasswordMismatchText() {
-        boolean warningMessage = invalidEmailPasswordWarning.isDisplayed();
+    public String retrieveWarningEmailPasswordMismatchText() {
+        String warningMessage = invalidEmailPasswordWarning.getText();
         return warningMessage;
     }
-    public boolean confirmationLinkSentToEmailIsDisplayed(){
+
+    public boolean confirmationLinkSentToEmailIsDisplayed() {
         boolean confirmationLink = emailConfirmationMessage.isDisplayed();
         return confirmationLink;
     }
-    public boolean retrieveWarningMessageForAccountExceededLoginAttempts(){
-        boolean attemptWarningMessage = exceededLoginAttempts.isDisplayed()  ;
+
+    public boolean retrieveWarningMessageForAccountExceededLoginAttempts() {
+        boolean attemptWarningMessage = exceededLoginAttempts.isDisplayed();
         return attemptWarningMessage;
+    }
+
+    public boolean returningCustomerIsDiplayed() {
+        boolean loginPage = returnCustomerdisplayed.isDisplayed();
+        return loginPage;
     }
 }

@@ -31,10 +31,14 @@ public class Homepage {
         PageFactory.initElements(driver,this);
     }
 
-    public void clickMyAccountDropDown(){myAccountDropDown.click();}
-    public void clickloginLink(){loginLink.click();}
-    public void clickOnRegisterLink(){registerLink.click();}
-    public void clickOnLinkOnHomepage(){linkOnHomePage.click();}
+    public void clickMyAccountDropDown(){
+        myAccountDropDown.click();}
+    public void clickloginLink(){
+        loginLink.click();}
+    public void clickOnRegisterLink(){
+        registerLink.click();}
+    public void clickOnLinkOnHomepage(){
+        linkOnHomePage.click();}
     public boolean elementPresentOnHomePage(){
         boolean display = homePageElement.isDisplayed();
         return display;

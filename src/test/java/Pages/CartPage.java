@@ -17,7 +17,7 @@ public class CartPage {
     @FindBy(linkText = "View Cart")
     private WebElement viewCartLink;
 
-    @FindBy(css = "#content > form > div > table > tbody > tr > td:nth-child(2) > a")
+    @FindBy(linkText= "HP LP3065")
     private WebElement productInCart;
 
     @FindBy(linkText = "Checkout")

@@ -15,13 +15,13 @@ public class SearchProductPage {
     @FindBy(css = "#search > span > button")
     private WebElement searchButton;
 
-    @FindBy(css = "#button-cart")
+    @FindBy(id= "button-cart")
     private WebElement addToCart;
 
-    @FindBy(xpath = "//button[@type = 'button']/i/following::span[@class = 'hidden-xs hidden-sm hidden-md']")
+    @FindBy(xpath = "//div[@class = 'caption']/following-sibling::div/child::button[1]")
     private WebElement addToCartButton;
 
-    @FindBy(xpath = "//*[@id= 'content']/div[3]/div/div/div[2]/div[1]/h4/a")
+    @FindBy(linkText = "HP LP3065")
     private WebElement productSearchIsDisplayed;
 
     @FindBy(xpath = "//*[@id= 'content']/div[3]/div/div/div[2]/div[1]/h4/a")
@@ -32,14 +32,25 @@ public class SearchProductPage {
         PageFactory.initElements(driver,this);
 
     }
-    public void enterToSearchBoxTextField(String product){searchBox.sendKeys(product);}
-    public void clickOnSearchButton(){searchButton.click();}
-    public void clickOnAddToCart(){addToCartButton.click();}
-    public void navigateToProductPage(){clickOnProductForDetails.click();}
-    public void addProductToCart(){addToCart.click();}
+    public void enterToSearchBoxTextField(String product) {
+        searchBox.sendKeys(product);}
+
+    public void clickOnSearchButton() {
+        searchButton.click();}
+
+    public void clickOnAddToCart(){
+        addToCartButton.click();}
+
+    public void navigateToProductPage(){
+        clickOnProductForDetails.click();}
+
+    public void addProductToCart(){
+        addToCart.click();}
+
     public boolean searchResultsForProductIsDisplayed(){
         boolean display = productSearchIsDisplayed.isDisplayed();
         return display;}
+
     public boolean searchBoxFieldDisplayedOnSearchPage(){
         boolean display = searchBox.isDisplayed();
         return display;

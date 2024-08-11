@@ -55,6 +55,11 @@ public class RegistrationPage {
     @FindBy(css = "#content > form > fieldset:nth-child(2) > div.form-group.required.has-error > div > div")
     private WebElement passwordDoesNotMatch;
 
+    @FindBy(css = "#content > form > fieldset:nth-child(3) > div > div > label:nth-child(1) > input[type=radio]")
+    private WebElement yesNewsLetterRadioButton;
+
+    @FindBy(linkText = "login page")
+    private WebElement loginPageLink;
 
     public RegistrationPage(WebDriver driver) {
         this.driver = driver;
@@ -69,8 +74,8 @@ public class RegistrationPage {
         LastNameFieldBox.sendKeys(lastNameText);
     }
 
-    public void enterEmailIntoFieldBox() {
-        emailFieldBox.sendKeys(Utils.emailWithDateTimeStamp());
+    public void enterEmailIntoFieldBox(String emailText) {
+        emailFieldBox.sendKeys(emailText);
     }
 
     public void enterTelephoneIntoFieldBox(String telephoneText) {
@@ -88,6 +93,8 @@ public class RegistrationPage {
     public void clickOnPrivacyPolicyCheckBox() {
         privacyPolicyConfirm.click();
     }
+    public void clickYesToNewsLetter(){yesNewsLetterRadioButton.click();}
+    public void clickOnLoginPageLinkAtRegistrationPage(){loginPageLink.click();}
 
     public void clickOnContinueButton() {
         clickOnContinue.click();

@@ -3,10 +3,10 @@ package Hooks;
 import Utilities.ConfigReader;
 import Utilities.Utils;
 import driver_Factory.DriverFactoryCode;
-import org.junit.After;
-import org.junit.Before;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 import java.util.Properties;
